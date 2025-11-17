@@ -1,0 +1,378 @@
+# =============================================================================
+# COMPREHENSIVE HTACCESS FOR HOSTINGER SHARED HOSTING
+# Universal Template - Copy & Paste Ready
+# =============================================================================
+
+# Enable Rewrite Engine
+RewriteEngine On
+
+# =============================================================================
+# MIME TYPES - Allow serving ALL file types
+# =============================================================================
+
+# JavaScript Files
+AddType application/javascript .js
+AddType application/javascript .mjs
+AddType text/javascript .js .mjs
+
+# JSON Files
+AddType application/json .json
+AddType application/manifest+json .webmanifest
+
+# Web Assembly
+AddType application/wasm .wasm
+
+# HTML/XML Files
+AddType text/html .html .htm .shtml
+AddType text/xml .xml
+AddType application/xhtml+xml .xhtml
+
+# CSS Files
+AddType text/css .css
+
+# Font Files
+AddType font/woff .woff
+AddType font/woff2 .woff2
+AddType application/font-woff .woff
+AddType application/font-woff2 .woff2
+AddType application/vnd.ms-fontobject .eot
+AddType font/ttf .ttf
+AddType font/otf .otf
+AddType application/x-font-ttf .ttf
+AddType application/x-font-otf .otf
+AddType image/svg+xml .svg .svgz
+
+# Image Files
+AddType image/png .png
+AddType image/jpeg .jpg .jpeg
+AddType image/gif .gif
+AddType image/webp .webp
+AddType image/avif .avif
+AddType image/x-icon .ico
+AddType image/bmp .bmp
+AddType image/tiff .tif .tiff
+
+# Audio Files
+AddType audio/mpeg .mp3
+AddType audio/ogg .ogg .oga
+AddType audio/wav .wav
+AddType audio/webm .weba
+AddType audio/aac .aac
+AddType audio/flac .flac
+AddType audio/midi .mid .midi
+
+# Video Files
+AddType video/mp4 .mp4 .m4v
+AddType video/webm .webm
+AddType video/ogg .ogv
+AddType video/quicktime .mov
+AddType video/x-msvideo .avi
+AddType video/x-ms-wmv .wmv
+AddType video/x-flv .flv
+AddType video/3gpp .3gp
+AddType video/3gpp2 .3g2
+
+# Document Files
+AddType application/pdf .pdf
+AddType application/msword .doc
+AddType application/vnd.openxmlformats-officedocument.wordprocessingml.document .docx
+AddType application/vnd.ms-excel .xls
+AddType application/vnd.openxmlformats-officedocument.spreadsheetml.sheet .xlsx
+AddType application/vnd.ms-powerpoint .ppt
+AddType application/vnd.openxmlformats-officedocument.presentationml.presentation .pptx
+AddType text/plain .txt
+AddType text/csv .csv
+AddType text/markdown .md
+
+# Archive Files
+AddType application/zip .zip
+AddType application/x-rar-compressed .rar
+AddType application/x-7z-compressed .7z
+AddType application/gzip .gz
+AddType application/x-tar .tar
+AddType application/x-bzip2 .bz2
+
+# Game-Specific Files
+AddType application/x-shockwave-flash .swf
+AddType application/octet-stream .unity3d
+AddType application/octet-stream .bin
+AddType application/octet-stream .data
+AddType text/plain .glsl .vert .frag
+AddType application/x-typescript .ts .tsx
+AddType text/jsx .jsx
+
+# =============================================================================
+# CORS - Cross-Origin Resource Sharing (Allow All)
+# =============================================================================
+
+<IfModule mod_headers.c>
+    # Allow all origins
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+    Header set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept, Authorization, Range"
+    Header set Access-Control-Allow-Credentials "true"
+    Header set Access-Control-Max-Age "86400"
+
+    # Allow embedding in frames/iframes
+    Header unset X-Frame-Options
+    Header set X-Frame-Options "ALLOWALL"
+
+    # Remove restrictive headers
+    Header unset Content-Security-Policy
+    Header unset X-Content-Security-Policy
+    Header unset X-WebKit-CSP
+</IfModule>
+
+# =============================================================================
+# FILE ACCESS PERMISSIONS - Allow All
+# =============================================================================
+
+# Allow direct access to all files
+<FilesMatch ".*">
+    Require all granted
+    Allow from all
+    Satisfy Any
+</FilesMatch>
+
+# Ensure hidden files can be accessed if needed (except .htaccess itself)
+<FilesMatch "^\.(?!htaccess)">
+    Require all granted
+    Allow from all
+</FilesMatch>
+
+# Allow directory listing (optional - uncomment if needed)
+# Options +Indexes
+
+# Allow following symbolic links
+Options +FollowSymLinks
+
+# Allow Server-Side Includes (if needed)
+Options +Includes
+
+# =============================================================================
+# PERFORMANCE OPTIMIZATION
+# =============================================================================
+
+# Enable Gzip Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+</IfModule>
+
+# Enable Browser Caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Default expiration: 1 month
+    ExpiresDefault "access plus 1 month"
+
+    # HTML - Cache for 1 hour
+    ExpiresByType text/html "access plus 1 hour"
+
+    # CSS and JavaScript - Cache for 1 year
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+
+    # Images - Cache for 1 year
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Fonts - Cache for 1 year
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+
+    # Audio/Video - Cache for 1 month
+    ExpiresByType audio/mpeg "access plus 1 month"
+    ExpiresByType audio/ogg "access plus 1 month"
+    ExpiresByType video/mp4 "access plus 1 month"
+    ExpiresByType video/webm "access plus 1 month"
+    ExpiresByType video/ogg "access plus 1 month"
+
+    # JSON and XML - Cache for 1 day
+    ExpiresByType application/json "access plus 1 day"
+    ExpiresByType text/xml "access plus 1 day"
+    ExpiresByType application/xml "access plus 1 day"
+</IfModule>
+
+# Cache-Control Headers
+<IfModule mod_headers.c>
+    # Cache static assets for 1 year
+    <FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|webp|svg|woff|woff2|ttf|otf|eot)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # Cache HTML for 1 hour
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "public, max-age=3600"
+    </FilesMatch>
+
+    # Don't cache JSON API responses (adjust as needed)
+    <FilesMatch "\.(json)$">
+        Header set Cache-Control "public, max-age=86400"
+    </FilesMatch>
+</IfModule>
+
+# =============================================================================
+# ERROR HANDLING
+# =============================================================================
+
+# Custom Error Pages (optional - create these files if needed)
+# ErrorDocument 400 /errors/400.html
+# ErrorDocument 401 /errors/401.html
+# ErrorDocument 403 /errors/403.html
+# ErrorDocument 404 /errors/404.html
+# ErrorDocument 500 /errors/500.html
+# ErrorDocument 502 /errors/502.html
+# ErrorDocument 503 /errors/503.html
+
+# =============================================================================
+# URL REWRITING & ROUTING
+# =============================================================================
+
+# Remove .html extension from URLs (optional)
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME}\.html -f
+# RewriteRule ^(.*)$ $1.html [L]
+
+# Redirect to HTTPS (uncomment if SSL is enabled)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect www to non-www (uncomment if preferred)
+# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+# RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# Redirect non-www to www (uncomment if preferred)
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+# =============================================================================
+# SECURITY - Balanced for Development/Games
+# =============================================================================
+
+# Prevent directory browsing (security best practice)
+Options -Indexes
+
+# Protect .htaccess file itself
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Block access to sensitive files
+<FilesMatch "(^#.*#|\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|sw[op])|~)$">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</FilesMatch>
+
+# Block access to hidden system files (except .well-known)
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_URI} "!(^|/)\.well-known/([^./]+./)+" [NC]
+    RewriteCond %{SCRIPT_FILENAME} -d [OR]
+    RewriteCond %{SCRIPT_FILENAME} -f
+    RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+# Disable Server Signature
+ServerSignature Off
+
+# =============================================================================
+# PHP SETTINGS (if using PHP)
+# =============================================================================
+
+<IfModule mod_php.c>
+    # Increase memory limit
+    php_value memory_limit 256M
+
+    # Increase max upload size
+    php_value upload_max_filesize 100M
+    php_value post_max_size 100M
+
+    # Increase max execution time
+    php_value max_execution_time 300
+
+    # Enable error reporting for development
+    # php_flag display_errors on
+    # php_value error_reporting E_ALL
+
+    # Disable error reporting for production
+    php_flag display_errors off
+    php_value error_reporting 0
+</IfModule>
+
+# =============================================================================
+# ADDITIONAL FEATURES
+# =============================================================================
+
+# Enable ETag (helps with caching)
+FileETag MTime Size
+
+# Set default charset
+AddDefaultCharset utf-8
+
+# Set default language
+DefaultLanguage en-US
+
+# Force UTF-8 for specific file types
+<IfModule mod_mime.c>
+    AddCharset utf-8 .atom .css .js .json .rss .vtt .webapp .xml
+</IfModule>
+
+# =============================================================================
+# WEBSOCKET SUPPORT (for multiplayer games)
+# =============================================================================
+
+# Note: WebSocket support depends on server configuration
+# These headers help with WebSocket connections
+<IfModule mod_headers.c>
+    Header set Connection "Upgrade"
+</IfModule>
+
+# =============================================================================
+# SERVICE WORKER & PWA SUPPORT
+# =============================================================================
+
+# Proper MIME type for service workers
+<Files "sw.js">
+    Header set Service-Worker-Allowed "/"
+</Files>
+
+<Files "service-worker.js">
+    Header set Service-Worker-Allowed "/"
+</Files>
+
+# =============================================================================
+# END OF HTACCESS CONFIGURATION
+# =============================================================================
+
+# USAGE NOTES:
+# 1. Upload this file to your public_html directory on Hostinger
+# 2. Make sure the file is named exactly ".htaccess" (with the dot)
+# 3. Set file permissions to 644
+# 4. Uncomment any optional features you need (HTTPS redirect, etc.)
+# 5. Some features may require specific Apache modules to be enabled
+# 6. Contact Hostinger support if certain features don't work

@@ -1,6 +1,6 @@
 # HTML Games Collection
 
-A curated collection of **200+ open-source HTML5/JavaScript games** that you can host on your server. Perfect for hosting on shared hosting platforms like Hostinger.
+A curated collection of **500+ open-source HTML5/JavaScript games** that you can host on your server. Perfect for hosting on shared hosting platforms like Hostinger.
 
 ---
 
@@ -19,6 +19,18 @@ A curated collection of **200+ open-source HTML5/JavaScript games** that you can
 - [Casual & Clicker Games](#casual--clicker-games)
 - [RPG Games](#rpg-games)
 - [3D Games](#3d-games)
+- [Sports Games](#sports-games)
+- [Voxel & Minecraft Clones](#voxel--minecraft-clones)
+- [Physics-Based Games](#physics-based-games)
+- [Bubble & Shooter Games](#bubble--shooter-games)
+- [Maze & Puzzle Adventures](#maze--puzzle-adventures)
+- [Rhythm & Music Games](#rhythm--music-games)
+- [Vehicle & Simulation Games](#vehicle--simulation-games)
+- [Strategy & War Games](#strategy--war-games)
+- [Text Adventure Games](#text-adventure-games)
+- [Casino & Chance Games](#casino--chance-games)
+- [Multiplayer Games](#multiplayer-games)
+- [Drawing & Creative Games](#drawing--creative-games)
 - [Game Frameworks & Engines](#game-frameworks--engines)
 
 ---
@@ -444,19 +456,347 @@ A curated collection of **200+ open-source HTML5/JavaScript games** that you can
 
 ---
 
+## Sports Games
+
+### Soccer/Football
+296. https://github.com/Dougarasu/puck-soccer - Puck soccer with JavaScript and jQuery
+297. https://github.com/prashantbaid/football-game - Foosball game with vanilla JavaScript
+298. https://github.com/ProtoxiDe22/DevSoccer - Program your own soccer team AI
+299. https://github.com/Mati365/Soccer.js - Socket-based soccer game
+300. https://github.com/laher/fooball - Football engine for HTML canvas
+301. https://github.com/FreakDev/HTML5-Star-Soccer - HTML5 Football game with PhaserJS
+302. https://github.com/filtoid/soccer-game - JavaScript football game in browser
+303. https://github.com/chofia/Js-Soccer-Game - Simple JavaScript soccer game
+
+### Basketball
+304. https://github.com/lamesjim/Canvas-Basketball-Game - HTML/JavaScript basketball with Canvas API
+305. https://github.com/michaelwilkie/Canvas-Basketball - Simple basketball with HTML5 Canvas
+306. https://github.com/LaurenCBullock/BasketBall - HTML5 Canvas Basketball Game
+307. https://github.com/BonbonLemon/basketball - Facebook Messenger basketball remake
+308. https://github.com/hichemcesar24/Basketball-Game-2D - Basketball 2D with Phaser
+309. https://github.com/purabshah8/set-shooter - JS basketball shooting game
+310. https://github.com/CBiX/bball.js - HTML5 2D basketball game
+
+### Golf
+311. https://github.com/cdleveille/puttjs - 2D minigolf with HTML5 Canvas
+312. https://github.com/oskarkv/golfgame - Small JavaScript golf game
+313. https://github.com/natedonato/squigglegolf - Web golf with Matter.js physics
+314. https://github.com/RasyaJusticio/GolfCanvas - 2D Golf with canvas
+315. https://github.com/etgrieco/minigolf-js - JS Minigolf with OOP design
+316. https://github.com/milsaware/Javascript-Golf-Solitaire - Golf Solitaire card game
+
+---
+
+## Voxel & Minecraft Clones
+
+317. https://github.com/guckstift/voxel-game-js - Minecraft clone from scratch, no libraries
+318. https://github.com/Petabyte918/blockcraft - WebGL infinite voxel world with multiplayer
+319. https://github.com/Romejanic/WebCraft - WebGL based Minecraft clone
+320. https://github.com/MarcellPerger1/minecraft_clone_1 - Minecraft clone with JavaScript & WebGL
+321. https://github.com/shortercode/Voxelcraft - Minecraft-like with procedural generation
+322. https://github.com/mitsuhiko/webgl-meincraft - Voxel WebGL engine in CoffeeScript
+323. https://github.com/chilliams/blockland - Browser-based voxel engine with WebGL
+
+---
+
+## Physics-Based Games
+
+324. https://github.com/liabru/matter-js - 2D rigid body physics engine
+325. https://github.com/emjose/slingshot - Slingshot game with Matter.js
+326. https://github.com/parin-parikh/mazeGame - Maze game with Matter.js physics
+327. https://github.com/lrusso/AngryBirds - Angry Birds clone in JavaScript
+328. https://github.com/tonikolaba/AngryBirds - Angry Birds Game using JavaScript
+329. https://github.com/shadowwinter/GP_Angry_Birds_Clone - Angry Birds with p5.js
+330. https://github.com/nathanjmt/angry-birds-clone - Angry Birds with p5js
+331. https://github.com/PlayerEpic76/Angry-Birds-HTML5 - Angry Birds HTML5 source
+332. https://github.com/Jorin-Liesse/Angry-Birds - Angry Birds recreation
+333. https://github.com/nixsolutions/demo-phaser-crazybirds - Crazy Birds with Phaser
+334. https://github.com/fuboki10/AngryBirds - Angry Birds with P5.js and Matter.js
+
+---
+
+## Bubble & Shooter Games
+
+335. https://github.com/rembound/Bubble-Shooter-HTML5 - Bubble Shooter tutorial
+336. https://github.com/OpenGenus/Bubble-Shooter-game-in-HTML - Bubble Shooter in HTML/CSS/JS
+337. https://github.com/kakorcal/bubble-shooter - Puzzle Bobble with Phaser.js
+338. https://github.com/nicholas-maltbie/BubbleShooterJS - Bubble Shooter implementation
+339. https://github.com/archhere/Bubble-Shooter - Interactive Bubble Shooter
+340. https://github.com/legilioli/js-bubble-shooter - Simple bubble shooter
+341. https://github.com/bschmitz9/Bubbleshooter - BubbleShooter with jQuery
+
+---
+
+## Maze & Puzzle Adventures
+
+### Maze Games
+342. https://github.com/winwanwon/HTML5-Maze-Game - Maze Game with OCR level creator
+343. https://github.com/drewsilcock/maze.js - Maze game with HTML5 canvas
+344. https://github.com/kevinkreiser/amaze - Maze Game using HTML5 Canvas
+345. https://github.com/YifanXu/MazeJS - Maze game on HTML5 Canvas
+
+### Dodge & Avoid Games
+346. https://github.com/KhangxLi/EvaDodge-Html5-Game - HTML5 dodging game
+347. https://github.com/fakiejohnny/dodge-game - Simple dodge game
+348. https://github.com/biiishal/DUET - Duet clone with Canvas
+349. https://github.com/tinogarcia/runner-game - Runner game avoiding obstacles
+
+### Falling Blocks
+350. https://github.com/thakurdiwakar/Falling-Blocks-Game - Control falling blocks
+351. https://github.com/Clepalitto/fallgame - 2D falling blocks with Crafty
+352. https://github.com/kedholmmoch/Dr-Mario-JS - Dr. Mario JS clone
+353. https://github.com/imkira/three7-html5 - Falling blocks game
+354. https://github.com/SmokeyNerd/Blockrain - HTML5 Tetris jQuery plugin
+355. https://github.com/omijn/blockbuster - JavaScript Canvas game
+356. https://github.com/melissapnyc/catch - Catch the falling blocks
+
+---
+
+## Rhythm & Music Games
+
+357. https://github.com/ChloeLiang/rhythm-game - Web-based rhythm game
+358. https://github.com/bemusic/bemuse - Online rhythm action game with React
+359. https://github.com/stclairdaniel/typeitup - Typing rhythm game with Audio API
+360. https://github.com/IsaacYongTY/rhythm-game - Rhythm game with Canvas and OOP
+361. https://github.com/doahuang/Taiko - Japanese Taiko drum rhythm game
+362. https://github.com/electr1ca/spaghebbeat - Rhythm game with p5.js
+
+---
+
+## Vehicle & Simulation Games
+
+### Airplane/Flight Games
+363. https://github.com/deepanprabhu/flight-game-javascript - Canvas 2D flight game
+364. https://github.com/andreimarinica/airplanes-game-js - Airplanes game with HTML5
+365. https://github.com/twknab/js-1942 - 1942-style airplane shooter
+366. https://github.com/xyzzy/jsFlightSim - Flight simulator in JavaScript
+
+### Car/Racing Games
+367. https://github.com/jakesgordon/javascript-racer - Outrun-style racing game
+368. https://github.com/Saimcode/car-game-js - Simple Car Game with HTML/CSS/JS
+369. https://github.com/sahilatahar/Car-Game - Car game with vanilla JavaScript
+370. https://github.com/KeshavRajuR/Car-Race - Car racing with jQuery
+371. https://github.com/PacktPublishing/Build-a-Car-Driving-Game-from-Scratch-using-JavaScript - Car driving tutorial
+
+### Parking Games
+372. https://github.com/mrdiamonddirt/parkingGame - Simple parking game with Kaboom.js
+373. https://github.com/kevinxmao/js_project - Park It parking game
+
+### Pool/Billiards
+374. https://github.com/afzalimdad9/8Ball-Pool-HTML5 - 8-ball pool with AI
+375. https://github.com/cptleo92/JSBilliards - Browser billiards game
+376. https://github.com/emikyu/8ball_pool - 8ball pool simulator
+377. https://github.com/MarcoBarsotti/8ball - 8ball with Box2D physics
+378. https://github.com/henshmi/Classic-Pool-Game - Classic 8-ball pool
+379. https://github.com/HarrisonMc555/billiards - Browser-based billiards
+380. https://github.com/CodeAbbey/simple-pool - Simple billiard game
+
+### Fishing Games
+381. https://github.com/micajank/Fishing_N_Such - Canvas fishing game
+382. https://github.com/gmac/FishingGame - Canvas-based fishing game
+383. https://github.com/Philip10023/fishing-game - Fishing with HTML canvas
+384. https://github.com/shirleytwl/gone-fishing - Simple fishing game
+385. https://github.com/xjamundx/HTML5-Fish - HTML5 fish game experiment
+386. https://github.com/LuongVinhKhang/Feeding-Frenzy-HTML5-Canvas - Feeding Frenzy clone
+
+---
+
+## Strategy & War Games
+
+### Tank Games
+387. https://github.com/quarkdev/battletanks - HTML5 Canvas Tank Game
+388. https://github.com/lei-cao/html5-tankwar - Tank war with HTML5
+389. https://github.com/tadast/webattle.js - Multiplayer tank battle
+390. https://github.com/nlarion/tankGame - Tank game in JavaScript
+391. https://github.com/generalmimon/tank-game - Simple tank game with Canvas
+392. https://github.com/lazd/TankGame - 3D multiplayer tank battle
+393. https://github.com/Sreekanth2108/tank - Tank game with HTML5
+394. https://github.com/newagebegins/BattleCity - Battle City remake
+395. https://github.com/intervalia/tanx - Tank battle with AI
+
+### Turn-Based Strategy
+396. https://github.com/hunghvu/8-bit-armageddon - 2D turn-based strategy (Worms-inspired)
+397. https://github.com/Thaliant/spellsiege - Turn-based tactical strategy
+398. https://github.com/jonathanschoonbroodt/catwars - Turn by turn strategy
+399. https://github.com/adngdb/reach - Turn-based strategy game
+400. https://github.com/marblexu/JavascriptStrategyGame - Simple turn-based strategy
+401. https://github.com/fabiocolacio/StrategyGame - Strategy game with HTML5
+
+### Zombie Games
+402. https://github.com/dmcinnes/dead-valley - GTA-style Zombie Survival
+403. https://github.com/tedjohnsonjs/2D-Zombie-Survival-Game - 2D Zombie Survival
+404. https://github.com/mo0hamedRadwan/Zombie-Game - Zombie Game with Canvas
+405. https://github.com/bentok/zombie-survival - JavaScript zombie apocalypse
+406. https://github.com/chasersmith/javascript-zombie-shoot - JavaScript zombie shooter
+407. https://github.com/8bit-peter/Zombie-Game-JS - Simple zombie game
+
+---
+
+## Text Adventure Games
+
+408. https://github.com/EyeOfMidas/text-adventure - Browser-based text adventure
+409. https://github.com/okaybenji/text-engine - HTML-based text adventure engine
+410. https://github.com/Mega-Barrel/Javascript-Text-Adventure-Game - Text adventure with JS
+411. https://github.com/besnik/text-adventure-game-js-engine - Text adventure engine with React
+412. https://github.com/richard-jones/jgame - JavaScript text adventure for teaching
+413. https://github.com/lejonmanen/adventure - Text adventure framework
+414. https://github.com/soster/adventex - Interactive fiction framework
+415. https://github.com/verkaufer/TextAdventureGame - Text adventure with jQuery
+
+---
+
+## Casino & Chance Games
+
+### Slot Machines
+416. https://github.com/johakr/html5-slot-machine - Modern slot machine (577 stars)
+417. https://github.com/flixrp/HTML-slot-machine-example - Lightweight slot machine
+418. https://github.com/JonR93/Simple-HTML-Slot-Machine - Simple HTML slot machine
+419. https://github.com/barbaracalderon/simple-slot-machine-game - Slot machine with balance
+420. https://github.com/clintbellanger/Karma-Slots - Karma Slots with Canvas
+421. https://github.com/marianapatcosta/js-slots-cra - JS Slot Machine PWA
+
+### Ludo
+422. https://github.com/yashksaini/Ludo - Digital Ludo board game
+423. https://github.com/yboodhan/ludo - Multiplayer Ludo strategy game
+424. https://github.com/wtricks/ludo.js - Ludo.js library (up to 9 players)
+425. https://github.com/whomonugiri/ludo-board-game - Responsive Ludo game
+426. https://github.com/dhirajpatra/ludo - Ludo with jQuery and PHP
+427. https://github.com/TheGeekBros/Ludo - Ludo with online multiplayer
+428. https://github.com/AhmadSarwarSSG/Ludo-King - Ludo King web game
+
+### Checkers/Draughts
+429. https://github.com/codethejason/checkers - Checkers with full features
+430. https://github.com/gartz/draughtsjs - Draughts/Checkers/Damas game
+431. https://github.com/shubhendusaurabh/draughts.js - Draughts library
+432. https://github.com/theninthsky/checkers - International draughts PvP
+433. https://github.com/niemet0502/checkers-game-js - Checkers with vanilla JS
+434. https://github.com/draughts/draught - Play draughts against computer
+435. https://github.com/billjeffries/jsCheckersAI - Checkers with AI engine
+436. https://github.com/batkinson/checkers-html - Network multiplayer checkers
+
+### Card Battle/War Games
+437. https://github.com/PolarisTLX/Javascript-War-Card-Game - War card game
+438. https://github.com/dgorgan/war - War card game in HTML/JS
+439. https://github.com/MisterTeeRoland/war - War card game with animations
+440. https://github.com/jeffreyeaton76/war - WAR JavaScript card game
+441. https://github.com/allxie/war - War against computer
+442. https://github.com/jpritcha3-14/set-card-game - SET card game
+
+### Reaction Time Games
+443. https://github.com/ellier7/testReactionGame - Reaction time test
+444. https://github.com/narendrajethi220/Reaction-Tester - Reflex testing game
+445. https://github.com/tothgeza/ReactionTest - Reaction time measurement
+446. https://github.com/itscloudys/reaction-speed-test - Reaction speed test
+447. https://github.com/larrytooley/reaction-time-game - Responsive reaction game
+448. https://github.com/iamsainikhil/reaction-tester - Mini color canvas game
+449. https://github.com/FlameFractal/Reaction-Time - Click reaction test
+
+---
+
+## Multiplayer Games
+
+450. https://github.com/ericterpstra/anagrammatix - Multi-player word game with Socket.IO
+451. https://github.com/fast-fingers/Multiplayer-Javascript-Game - Multiplayer with Socket.io
+452. https://github.com/DZykov/MultiplayerWebGame - Multiplayer web game
+453. https://github.com/fmbenhassine/gamehub.io - Real-time multiplayer server
+454. https://github.com/sgoedecke/socket-io-game - Multiplayer Snake with websockets
+455. https://github.com/alinauroz/Joemes-s-Multiplayer-Game-Lobby - Game lobby with Socket.io
+456. https://github.com/kubowania/battleships - Multiplayer battleships (also listed above)
+
+---
+
+## Drawing & Creative Games
+
+### Paint/Drawing Apps
+457. https://github.com/demihe/HTML5-Canvas-Paint-Application - Customizable paint app
+458. https://github.com/PacktPublishing/Learn-Javascript-and-HTML5-Canvas---Build-a-Paint-App-for-Drawing - Paint app tutorial
+459. https://github.com/Kristjan93/PaintWebApp - OOP drawing application
+460. https://github.com/antonrufino/HTMLPaint - Simple drawing program
+461. https://github.com/pallavisingh1511/Simple-Paint-App - Paint app with circles
+462. https://github.com/bnjasim/paint-application-javascript - Paint with jQuery
+463. https://github.com/AntoniaNicoara/HTML5-Canvas-Paint-Application - Paint with export options
+
+### Pinball
+464. https://github.com/seanperfecto/Astro-Pinball - JavaScript/HTML Canvas pinball
+465. https://github.com/fishshiz/pinball-wizard - Pinball with Matter.js
+466. https://github.com/mmiklos/pinball_game - Pinball with Box2D
+467. https://github.com/lrusso/Pinball - Pinball in JavaScript
+468. https://github.com/corehtml5canvas/code - Core HTML5 Canvas pinball example
+
+### Cooking/Restaurant Games
+469. https://github.com/teamcalendar/projectgitgrub - Cooking challenge game
+470. https://github.com/enesbabekoglu/Restaurant-Game-Canvas-JS - Restaurant management simulation
+471. https://github.com/Korbinsy/Cooking-Incremental - Cooking incremental game
+
+### Pixel Art Games
+472. https://github.com/yigitocak/Pixel-Punch-Out - 2D pixel fighting game
+473. https://github.com/idimetrix/pixel-game - 8bit Painter pixel art game
+
+---
+
+## Additional Classic Games
+
+### Imitation Games
+474. https://github.com/imclab/snake-game - Classic 8-bit Snake with music
+475. https://github.com/CodingWith-Adam/dino-game - Chrome Dinosaur Clone (duplicate check)
+476. https://github.com/Cashed/memory-game - Vanilla JS memory card game
+477. https://github.com/crisner/arcade-game - Simple arcade Frogger game
+478. https://github.com/Yuribenjamin/arcade-game - Arcade Game with Canvas
+
+### More Puzzle Games
+479. https://github.com/tadhikari/Javascript-Slider-Puzzle-Game - Slider puzzle game
+480. https://github.com/davinaleong/learn-breakout-js - 2D breakout learning project
+481. https://github.com/imilisav/BrickerGame - Score-oriented breakout
+482. https://github.com/TheNewStyles/BrickBreaker-JS - Brick breaker (pure JS + Phaser)
+483. https://github.com/DeltaZen/arkanoid - Arkanoid for Webxdc
+484. https://github.com/DeveshYadav13/brick-breaker-game - Simple brick breaker
+
+### More Word Games
+485. https://github.com/Krenbot/js-quiz - Word guessing game
+486. https://github.com/Rubyrgill/Word-Guess-Game - Word Guess Game JS
+487. https://github.com/ndgithub/Word-Guess-Game - Word Guessing with HTML/CSS
+488. https://github.com/violadolayinka/JS-word-guessing-game - Word Scramble Game
+
+### More Card Games
+489. https://github.com/TikhonJelvis/javascript-card-games - JavaScript card games
+490. https://github.com/neuralline/js-card-game - JS card game
+491. https://github.com/sudiptachatterjee/ludo - Ludo implementation
+
+### More Casual Games
+492. https://github.com/pranshukas/Dice-Game - Dice Game implementation
+493. https://github.com/Mansanchya/Roll-The-Dice-Game - Roll The Dice open source
+494. https://github.com/oliviam20/JavaScript-Dice-Game - Dice rolling JS game
+495. https://github.com/AmmuJose/Hangman - Hangman with Bootstrap
+496. https://github.com/sruti2024/Simon-game - Simon memory game
+497. https://github.com/BR1K/SplashyFish - Splashy Fish (Flappy Bird style)
+
+### More Sports/Action
+498. https://github.com/ackoujens/html-5-shoot-em-up - HTML5 Shoot 'em up
+499. https://github.com/Mikepicker/astro - HTML5 Arcade Game
+500. https://github.com/dianavile/ArcadeGame - Classic Arcade Game
+501. https://github.com/ozgurtt/phaser-examples-1 - Collection of Phaser games
+
+### Additional Utilities
+502. https://github.com/deekappyok/color-guessing - Color guessing with React
+503. https://github.com/m-wolowicz/Trivia-Game - Trivia Game with jQuery
+504. https://github.com/LindsFisch/TriviaGame - Trivia with setInterval
+505. https://github.com/KWard94/Trivia-Game - Trivia coded in JS/HTML/CSS
+
+---
+
 ## Game Frameworks & Engines
 
-285. https://github.com/phaserjs/phaser - Phaser 2D game framework
-286. https://github.com/phaserjs/phaser-by-example - Phaser by Example games
-287. https://github.com/noowxela/phaser-examples - Phaser3 & Phaser2 game collections
-288. https://github.com/jojoee/phaser-examples - Phaser game collections
-289. https://github.com/udsgit/phaser3-tutorial-game - Phaser 3 tutorial game
-290. https://github.com/szerhusenBC/phaser-tutorial - Phaser tutorial
-291. https://github.com/jschomay/phaser-demo-game - Demo game for Phaser
-292. https://github.com/mrdoob/three.js - JavaScript 3D Library
-293. https://github.com/Rysm/html-minigames - HTML5 Canvas/Javascript mini-games
-294. https://github.com/Koubae/Javascript-Games - Collection of JavaScript Games
-295. https://github.com/goweiwen/html5-canvas-games - Assorted canvas games
+506. https://github.com/phaserjs/phaser - Phaser 2D game framework
+507. https://github.com/phaserjs/phaser-by-example - Phaser by Example games
+508. https://github.com/noowxela/phaser-examples - Phaser3 & Phaser2 game collections
+509. https://github.com/jojoee/phaser-examples - Phaser game collections
+510. https://github.com/udsgit/phaser3-tutorial-game - Phaser 3 tutorial game
+511. https://github.com/szerhusenBC/phaser-tutorial - Phaser tutorial
+512. https://github.com/jschomay/phaser-demo-game - Demo game for Phaser
+513. https://github.com/mrdoob/three.js - JavaScript 3D Library
+514. https://github.com/Rysm/html-minigames - HTML5 Canvas/Javascript mini-games
+515. https://github.com/Koubae/Javascript-Games - Collection of JavaScript Games
+516. https://github.com/goweiwen/html5-canvas-games - Assorted canvas games
 
 ---
 
@@ -484,6 +824,6 @@ Each repository has its own license. Please check individual repositories for li
 
 ---
 
-**Total: 295+ Repositories**
+**Total: 516 Repositories**
 
 *Last updated: November 2025*
