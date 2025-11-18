@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Ultimate Web Games Collection - 1000+ open-source HTML5/JavaScript games">
+    <title>🎮 Ultimate Web Games Collection - 1000+ Games</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --dark: #0f172a;
+            --gray: #1e293b;
+            --light: #f1f5f9;
+            --text: #cbd5e1;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: linear-gradient(45deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Header */
+        header {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: var(--text);
+            margin-bottom: 2rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text);
+            margin-top: 0.5rem;
+        }
+
+        /* Search Bar */
+        .search-container {
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 1.5rem 3rem 1.5rem 5rem;
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-radius: 50px;
+            color: white;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* Categories */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .category-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 50px rgba(99, 102, 241, 0.3);
+        }
+
+        .category-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .category-count {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .category-description {
+            color: var(--text);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .feature-text {
+            color: var(--text);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 23, 42, 0.9);
+            padding: 3rem 0;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(99, 102, 241, 0.2);
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <header>
+        <div class="container">
+            <div class="hero">
+                <h1>🎮 Ultimate Web Games Collection</h1>
+                <p class="hero-subtitle">The most comprehensive collection of 1,000+ open-source HTML5/JavaScript games on GitHub</p>
+
+                <div class="btn-group">
+                    <a href="https://github.com/ragilmalik/games-collection" class="btn btn-primary" target="_blank">
+                        ⭐ View on GitHub
+                    </a>
+                    <a href="README.md" class="btn btn-secondary">
+                        📖 Browse Full Collection
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Stats Section -->
+        <div class="stats fade-in">
+            <div class="stat-card">
+                <div class="stat-number">1,000+</div>
+                <div class="stat-label">Games</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">500K+</div>
+                <div class="stat-label">Total Stars</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">35+</div>
+                <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Frameworks</div>
+            </div>
+        </div>
+
+        <!-- Search Section -->
+        <div class="search-container fade-in">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-bar" id="searchBar" placeholder="Search for games, categories, or technologies...">
+        </div>
+
+        <!-- Features -->
+        <div class="features fade-in">
+            <div class="feature">
+                <div class="feature-icon">✨</div>
+                <h3 class="feature-title">Quality Curated</h3>
+                <p class="feature-text">Every game tested and verified for quality</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🚀</div>
+                <h3 class="feature-title">Deploy Ready</h3>
+                <p class="feature-text">Most games work out of the box</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎨</div>
+                <h3 class="feature-title">All Genres</h3>
+                <p class="feature-text">From classics to modern innovations</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💻</div>
+                <h3 class="feature-title">Self-Hostable</h3>
+                <p class="feature-text">Perfect for any hosting platform</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔓</div>
+                <h3 class="feature-title">100% Open Source</h3>
+                <p class="feature-text">Learn from the best implementations</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3 class="feature-title">Mobile Friendly</h3>
+                <p class="feature-text">Play on any device</p>
+            </div>
+        </div>
+
+        <!-- Categories -->
+        <h2 style="text-align: center; color: white; font-size: 2.5rem; margin: 4rem 0 2rem 0;">Game Categories</h2>
+        <div class="categories" id="categoriesGrid">
+            <!-- Categories will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/ragilmalik/games-collection" target="_blank">GitHub</a>
+                <a href="https://github.com/ragilmalik/games-collection/issues" target="_blank">Report Issue</a>
+                <a href="https://github.com/ragilmalik/games-collection/pulls" target="_blank">Contribute</a>
+                <a href="README.md">Documentation</a>
+            </div>
+            <p style="color: var(--text); margin-top: 1rem;">
+                Made with ❤️ for the web game development community
+            </p>
+            <p style="color: var(--text); margin-top: 0.5rem;">
+                Last Updated: November 2025 • 1,000+ Repositories
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const categories = [
+            { icon: '🐍', title: 'Snake Games', count: '50+', description: 'Classic snake variations from retro to AI-powered' },
+            { icon: '🧱', title: 'Tetris Games', count: '50+', description: 'Falling block puzzles with modern twists' },
+            { icon: '👻', title: 'Pacman Games', count: '40+', description: 'Maze chase games and variations' },
+            { icon: '👾', title: 'Space Invaders', count: '35+', description: 'Classic arcade shooters' },
+            { icon: '🎯', title: 'Breakout/Arkanoid', count: '30+', description: 'Brick breaking action' },
+            { icon: '🏓', title: 'Pong Games', count: '25+', description: 'The original video game' },
+            { icon: '🎲', title: '2048 Games', count: '30+', description: 'Addictive sliding tile puzzles' },
+            { icon: '🔢', title: 'Sudoku', count: '25+', description: 'Number placement puzzles' },
+            { icon: '💣', title: 'Minesweeper', count: '30+', description: 'Logic-based mine detection' },
+            { icon: '🧩', title: 'Jigsaw Puzzles', count: '25+', description: 'Piece-fitting puzzles' },
+            { icon: '🍬', title: 'Match-3 Games', count: '30+', description: 'Candy Crush style matching' },
+            { icon: '♠️', title: 'Solitaire', count: '35+', description: 'Classic card patience games' },
+            { icon: '🎰', title: 'Blackjack', count: '25+', description: 'Casino card game' },
+            { icon: '🎴', title: 'Poker', count: '20+', description: 'Texas Hold\'em and variants' },
+            { icon: '♟️', title: 'Chess', count: '30+', description: 'The game of kings' },
+            { icon: '⭕', title: 'Tic Tac Toe', count: '25+', description: 'Noughts and crosses' },
+            { icon: '🔴', title: 'Connect Four', count: '20+', description: 'Four in a row' },
+            { icon: '🚢', title: 'Battleship', count: '20+', description: 'Naval warfare strategy' },
+            { icon: '🐦', title: 'Flappy Bird', count: '30+', description: 'Side-scrolling flying game' },
+            { icon: '🦫', title: 'Whack-a-Mole', count: '15+', description: 'Reaction-time games' },
+            { icon: '🍉', title: 'Fruit Ninja', count: '15+', description: 'Fruit slicing action' },
+            { icon: '🦖', title: 'Chrome Dino', count: '20+', description: 'Endless runner' },
+            { icon: '🎮', title: 'Platformers', count: '25+', description: 'Jump and run adventures' },
+            { icon: '🏃', title: 'Endless Runners', count: '25+', description: 'Non-stop running action' },
+            { icon: '⌨️', title: 'Typing Games', count: '20+', description: 'Improve your typing speed' },
+            { icon: '🖱️', title: 'Clicker/Idle', count: '20+', description: 'Incremental progression' },
+            { icon: '🎲', title: 'Dice & Casino', count: '40+', description: 'Games of chance' },
+            { icon: '🎯', title: '3D Games', count: '30+', description: 'WebGL and Three.js games' },
+            { icon: '🏰', title: 'Tower Defense', count: '30+', description: 'Strategic defense games' },
+            { icon: '🌐', title: 'Multiplayer', count: '30+', description: 'Online multiplayer games' },
+            { icon: '🎨', title: 'Drawing & Creative', count: '20+', description: 'Art and music creation' },
+            { icon: '🎓', title: 'Educational', count: '20+', description: 'Learn while playing' },
+            { icon: '⚙️', title: 'Frameworks', count: '50+', description: 'Game engines and libraries' },
+            { icon: '📚', title: 'Examples', count: '50+', description: 'Tutorials and code samples' }
+        ];
+
+        // Populate categories
+        const grid = document.getElementById('categoriesGrid');
+        categories.forEach(cat => {
+            const card = document.createElement('div');
+            card.className = 'category-card';
+            card.innerHTML = `
+                <div class="category-icon">${cat.icon}</div>
+                <h3 class="category-title">${cat.title}</h3>
+                <div class="category-count">${cat.count}</div>
+                <p class="category-description">${cat.description}</p>
+            `;
+            card.addEventListener('click', () => {
+                window.location.href = 'README.md';
+            });
+            grid.appendChild(card);
+        });
+
+        // Search functionality
+        const searchBar = document.getElementById('searchBar');
+        searchBar.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.category-card');
+
+            cards.forEach(card => {
+                const title = card.querySelector('.category-title').textContent.toLowerCase();
+                const description = card.querySelector('.category-description').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Add fade-in to category cards
+        document.querySelectorAll('.category-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.5s ease ${index * 0.05}s`;
+
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
