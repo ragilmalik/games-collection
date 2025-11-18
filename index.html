@@ -353,6 +353,45 @@
             font-size: 1.2rem;
         }
 
+        .sort-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .sort-group {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .sort-label {
+            color: var(--text);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .sort-btn {
+            padding: 0.5rem 1rem;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 20px;
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+        }
+
+        .sort-btn:hover, .sort-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 0 1rem;
@@ -373,8 +412,8 @@
             right: 2rem;
             background: var(--gradient);
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -383,8 +422,9 @@
             opacity: 0;
             pointer-events: none;
             transition: all 0.3s ease;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4);
+            z-index: 1000;
         }
 
         .scroll-top.visible {
@@ -439,6 +479,20 @@
 
             <div class="category-filter" id="categoryFilter">
                 <!-- Categories will be inserted here -->
+            </div>
+
+            <div class="sort-controls">
+                <div class="sort-group">
+                    <span class="sort-label">Sort by:</span>
+                    <button class="sort-btn active" onclick="setSortBy('default')">Default</button>
+                    <button class="sort-btn" onclick="setSortBy('name')">Name</button>
+                    <button class="sort-btn" onclick="setSortBy('stars')">Stars</button>
+                </div>
+                <div class="sort-group">
+                    <span class="sort-label">Order:</span>
+                    <button class="sort-btn active" onclick="setSortOrder('asc')">Ascending</button>
+                    <button class="sort-btn" onclick="setSortOrder('desc')">Descending</button>
+                </div>
             </div>
 
             <div class="results-info">
@@ -560,6 +614,8 @@
         let filteredGames = [...gamesDatabase];
         let activeCategory = 'All';
         let searchTerm = '';
+        let sortBy = 'default';
+        let sortOrder = 'asc';
 
         // Initialize
         function init() {
@@ -607,8 +663,52 @@
                     game.category.toLowerCase().includes(searchTerm);
                 return matchesCategory && matchesSearch;
             });
+            applySorting();
             renderGames();
             updateStats();
+        }
+
+        // Sorting functions
+        function setSortBy(type) {
+            sortBy = type;
+            document.querySelectorAll('.sort-controls .sort-group:first-child .sort-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.toLowerCase() === type);
+            });
+            applySorting();
+            renderGames();
+        }
+
+        function setSortOrder(order) {
+            sortOrder = order;
+            document.querySelectorAll('.sort-controls .sort-group:last-child .sort-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.toLowerCase() === order.substring(0, 3));
+            });
+            applySorting();
+            renderGames();
+        }
+
+        function applySorting() {
+            if (sortBy === 'default') {
+                filteredGames.sort((a, b) => {
+                    return sortOrder === 'asc' ? a.num - b.num : b.num - a.num;
+                });
+            } else if (sortBy === 'name') {
+                filteredGames.sort((a, b) => {
+                    const nameA = (a.repo.split('/')[1] || a.repo).toLowerCase();
+                    const nameB = (b.repo.split('/')[1] || b.repo).toLowerCase();
+                    if (sortOrder === 'asc') {
+                        return nameA.localeCompare(nameB);
+                    } else {
+                        return nameB.localeCompare(nameA);
+                    }
+                });
+            } else if (sortBy === 'stars') {
+                filteredGames.sort((a, b) => {
+                    const starsA = parseInt(a.stars.replace(/[^0-9]/g, '')) || 0;
+                    const starsB = parseInt(b.stars.replace(/[^0-9]/g, '')) || 0;
+                    return sortOrder === 'asc' ? starsA - starsB : starsB - starsA;
+                });
+            }
         }
 
         // Render games
@@ -668,18 +768,11 @@
             window.addEventListener('scroll', () => {
                 const currentScrollY = window.scrollY;
 
-                // Show/hide stats based on scroll direction
-                if (currentScrollY > 100) {
-                    if (currentScrollY > lastScrollY) {
-                        // Scrolling down - hide stats
-                        statsBar.classList.add('hidden');
-                    } else {
-                        // Scrolling up - show stats
-                        statsBar.classList.remove('hidden');
-                    }
-                } else {
-                    // At top - always show stats
+                // Show stats only when at the very top
+                if (currentScrollY < 50) {
                     statsBar.classList.remove('hidden');
+                } else {
+                    statsBar.classList.add('hidden');
                 }
 
                 // Show/hide scroll to top button
